@@ -69,8 +69,7 @@ function Home() {
         <li>
           <a>
             <CheckDoneIcon />
-            ~100 Google PageSpeed Performance score when npm run start or
-            deploying to Production / Vercel
+            ~100 Google PageSpeed Performance score when deploying to Vercel
             <br />
           </a>
         </li>
