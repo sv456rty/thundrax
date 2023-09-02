@@ -62,8 +62,8 @@ function Home() {
         <li>
           <a>
             <CheckDoneIcon />
-            Add window resize check to ensure minium device width is met or else
-            error alert will be shown
+            Add window resize check to ensure minimum device width is met or
+            else error alert will be shown
           </a>
         </li>
         <li>
