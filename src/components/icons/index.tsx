@@ -1,4 +1,4 @@
-// NOTE: The svg code is from Copy JSX @ https://heroicons.com/ (rocket-launch icon)
+// NOTE: The svg code is from Copy JSX @ https://heroicons.com/ (rocket-launch solid icon)
 const AppLogoIcon = () => {
   return (
     <svg

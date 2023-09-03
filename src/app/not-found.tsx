@@ -1,12 +1,16 @@
+// NOTE - Having a not-found page in the App Router implementation also means that when npm run build, the Page Route (ex: Route (pages)) First Load JS shared by all content is 0KB, instead of the usual ~76.4 KB to be generated.
+
 import Link from "next/link";
 
 export default function NotFound() {
   return (
     <div
-      className={"flex justify-center flex-col m-auto h-screen p-4 bg-primary"}
+      className={
+        "flex flex-col items-center justify-center m-auto h-screen p-4 bg-primary"
+      }
     >
       <div className={"rounded-box m-4 max-w-[540px]"}>
-        <div className="alert alert-error text-neutral">
+        <div className="alert alert-error flex flex-col">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="stroke-current shrink-0 h-6 w-6"
@@ -23,7 +27,7 @@ export default function NotFound() {
 
           <h2>404 - Not Found</h2>
           <p>Could not find requested resource</p>
-          <Link href="/">Return Home</Link>
+          <Link href="/">Back to Home</Link>
         </div>
       </div>
     </div>

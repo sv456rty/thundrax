@@ -8,7 +8,7 @@ import AppConfigs from "@/configs/AppConfigs";
 const FailedWidthAlert = () => {
   const minimumDeviceWidth = AppConfigs.site.minDeviceWidth;
   return (
-    <div className="flex justify-center flex-col m-auto h-screen p-4 bg-primary">
+    <div className="flex justify-center flex-col m-auto h-screen p-1 bg-primary">
       <div className="alert alert-error">
         <svg
           xmlns="http://www.w3.org/2000/svg"
