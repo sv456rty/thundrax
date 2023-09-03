@@ -71,6 +71,7 @@ const AppConfigs = {
   },
   redux: {
     ui: {
+      sidebar: { show: false },
       theme: {
         name: defaultThemeNameToLoad,
         defaultName: defaultThemeNameToLoad,

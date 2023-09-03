@@ -36,7 +36,7 @@ const FailedWidthAlert = () => {
 };
 
 // **********************************************************
-const SiteHoc = ({ children }: PropsWithChildren) => {
+const RootHoc = ({ children }: PropsWithChildren) => {
   //
   const isConditionMet = useMinimumDeviceWidthCheck();
 
@@ -45,4 +45,4 @@ const SiteHoc = ({ children }: PropsWithChildren) => {
   else return children;
 };
 
-export default SiteHoc;
+export default RootHoc;
