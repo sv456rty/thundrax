@@ -1,6 +1,4 @@
-//import { HiRocketLaunch as LogoIcon } from "react-icons/hi2";
-
-import { RocketLaunchIcon as LogoIcon } from "@heroicons/react/24/solid";
+import { AppLogoIcon } from "@/components/icons";
 
 /* ****************************************************** 
  -- CHANGE FROM THIS POINT FORWARD FOR YOUR APP SETUP --
@@ -11,22 +9,19 @@ import { RocketLaunchIcon as LogoIcon } from "@heroicons/react/24/solid";
 const appName = "Thundrax";
 
 // what is the app logo icon ?
-// NOTE: The app logo must be a react-icons SVG Icon, not an Image
-// The reason for this requirement is because the App Logo SVG Icon Stroke color
-// will be automatically resized and changed dynamically to the primary color of the chosen theme
-// You can find various react-icons SVG Icons here >> https://react-icons.github.io/react-icons/icons
-const appLogoIcon = LogoIcon;
+// NOTE: The app logo must be a JSX SVG Component, not an Image
+// NOTE: A simple way to create a JSX-SVG-Component app logo icon is to Copy JSX @ https://heroicons.com/.
+// See example in "@/components/icons/AppLogoIcon" for more info
+const appLogoIcon = AppLogoIcon;
 
-// Update your favicon
-// NOTE: Favicon is a SVG icon, not an Image file
+// What is the app favicon ?
 // NOTE: Upload & overwrite the default favicon.svg in /public/assets/images/favicon.svg
-// Note that the file name must be favicon.svg and the location must be /public/assets/images
+// NOTE: The file name must be favicon.svg and the location must be /public/assets/images
 
 // To create your own Favicon SVG:
-// (a) Have your SVG code ready or use Copy SVG code for HeroIcons here >> https://heroicons.com/ and save as SVG file
-//     NOTE that the default size 24x24 is good enough for a FavIcon
+// (a) Have your SVG code ready or use Copy SVG code for HeroIcons here >> https://heroicons.com/ and save as SVG file. Note that the default size 24x24 is good enough for a FavIcon
 // (b) Open the SVG file, change stroke from "currentcolor" to your RGB color (eg: #2f65cb) and save the file
-// On NextJS Metadata Icons >> https://nextjs.org/docs/app/api-reference/functions/generate-metadata#icons
+// (c) Upload the favicon.svg to /public/assets/images/favicons folder
 const appFavIconPath = "/assets/images/favicons/favicon.svg";
 
 /* ************************************************* 
