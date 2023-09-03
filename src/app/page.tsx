@@ -69,6 +69,15 @@ function Home() {
         <li>
           <a>
             <CheckDoneIcon />
+            Redux is implemented with default DaisyUI Theme applied when app
+            starts up. Redux-Toolkit + Redux-Persist is used. By default, only
+            ui.theme node is persisted. All other reducers or associated with ui
+            slice are not persisted (see /redux/store.ts).
+          </a>
+        </li>
+        <li>
+          <a>
+            <CheckDoneIcon />
             ~100 Google PageSpeed Performance score when deploying to Vercel
             <br />
           </a>
@@ -76,11 +85,11 @@ function Home() {
         <li>
           <a>
             <WarningIcon />
-            No specific page, route, redux or translation configs are set up yet
+            No specific page, route or translation configs are set up yet
           </a>
         </li>
         <li className="p-2">
-          This version should be the bare minimum version to use
+          This version is minimum base version + redux implementation
         </li>
       </ul>
     </div>
