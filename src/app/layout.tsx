@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { inter } from "@/utils/fonts";
 
-import AppProvider from "./_app";
+import AppProvider from "@/containers/AppProvider";
 
 import AppConfigs from "@/configs/AppConfigs";
 

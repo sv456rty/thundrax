@@ -2,9 +2,9 @@
 
 import type { PropsWithChildren } from "@/types/props.children";
 import { useMinimumDeviceWidthCheck } from "@/hooks/useThundrax";
-
 import AppConfigs from "@/configs/AppConfigs";
 
+// **********************************************************
 const FailedWidthAlert = () => {
   const minimumDeviceWidth = AppConfigs.site.minDeviceWidth;
   return (
@@ -33,11 +33,13 @@ const FailedWidthAlert = () => {
   );
 };
 
-const AppProvider = (props: PropsWithChildren<{}>) => {
-  const isOK = useMinimumDeviceWidthCheck();
-  if (isOK == null) return null;
-  else if (!isOK) return <FailedWidthAlert />;
-  else return props.children;
+const AppHoc = ({ children }: PropsWithChildren) => {
+  //
+  const isConditionMet = useMinimumDeviceWidthCheck();
+
+  if (isConditionMet == null) return null;
+  else if (!isConditionMet) return <FailedWidthAlert />;
+  else return children;
 };
 
-export default AppProvider;
+export default AppHoc;
