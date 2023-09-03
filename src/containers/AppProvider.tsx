@@ -1,10 +1,9 @@
 "use client";
 
 import type { PropsWithChildren } from "@/types/props.children";
-import AppHoc from "./AppHoc";
 
 const AppProvider = ({ children }: PropsWithChildren) => {
-  return <AppHoc>{children}</AppHoc>;
+  return children;
 };
 
 export default AppProvider;

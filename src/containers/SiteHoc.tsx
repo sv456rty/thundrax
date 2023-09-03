@@ -1,3 +1,5 @@
+// Higher-Order-Component Hook to check if Miniumum Device Width to use the app is met
+
 "use client";
 
 import type { PropsWithChildren } from "@/types/props.children";
@@ -33,7 +35,8 @@ const FailedWidthAlert = () => {
   );
 };
 
-const AppHoc = ({ children }: PropsWithChildren) => {
+// **********************************************************
+const SiteHoc = ({ children }: PropsWithChildren) => {
   //
   const isConditionMet = useMinimumDeviceWidthCheck();
 
@@ -42,4 +45,4 @@ const AppHoc = ({ children }: PropsWithChildren) => {
   else return children;
 };
 
-export default AppHoc;
+export default SiteHoc;

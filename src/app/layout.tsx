@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { inter } from "@/utils/fonts";
 
-import AppProvider from "@/containers/AppProvider";
+import SiteProvider from "@/containers/SiteProvider";
 
 import AppConfigs from "@/configs/AppConfigs";
 
@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body className={inter.className}>
-        <AppProvider>{children}</AppProvider>
+        <SiteProvider>{children}</SiteProvider>
       </body>
     </html>
   );
