@@ -3,7 +3,7 @@
 import type { PropsWithChildren } from "@/types/props.children";
 import { useMinimumDeviceWidthCheck } from "@/hooks/useThundrax";
 
-import AppConfigs from "@/contexts/AppConfigs";
+import AppConfigs from "@/configs/AppConfigs";
 
 const FailedWidthAlert = () => {
   const minimumDeviceWidth = AppConfigs.site.minDeviceWidth;

@@ -1,7 +1,7 @@
-import { IconType } from "react-icons";
+// import { IconType } from "react-icons";
 
 type Icon = {
-  icon: IconType;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 };
 
 // **********************************************************

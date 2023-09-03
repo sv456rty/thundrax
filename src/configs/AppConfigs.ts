@@ -1,4 +1,6 @@
-import { HiRocketLaunch as LogoIcon } from "react-icons/hi2";
+//import { HiRocketLaunch as LogoIcon } from "react-icons/hi2";
+
+import { RocketLaunchIcon as LogoIcon } from "@heroicons/react/24/solid";
 
 /* ****************************************************** 
  -- CHANGE FROM THIS POINT FORWARD FOR YOUR APP SETUP --
