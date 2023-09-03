@@ -5,9 +5,6 @@
 
 "use client";
 
-import { useEffect } from "react";
-import { store } from "@/redux/store";
-import { setDefaultThemeName } from "@/redux/slices/uiSlice";
 import { useAppSelector } from "@/redux/hooks";
 
 import type { PropsWithChildren } from "@/types/props.children";
@@ -17,7 +14,6 @@ type Theme = {
 };
 
 const DaisyUITheme = (props: PropsWithChildren<Theme>) => {
-  console.log("inside is ", props.theme);
   return <div data-theme={`${props.theme}`}>{props.children}</div>;
 };
 
