@@ -5,9 +5,11 @@ const inter = Inter({
   display: "swap",
 });
 
+/*
 const roboto_flex = Roboto_Flex({
   subsets: ["latin"],
   display: "swap",
 });
+*/
 
-export { inter, roboto_flex };
+export { inter };
