@@ -1,7 +1,7 @@
 import { AppLogoIcon } from "@/components/icons";
 
 /* ****************************************************** 
- -- CHANGE FROM THIS POINT FORWARD FOR YOUR APP SETUP --
+ -- BASIC CONFIGS - CHANGE THESE TO FIT YOUR APP NEEDS --
 *********************************************************/
 
 // what is the app name ?
@@ -25,11 +25,22 @@ const appLogoIcon = AppLogoIcon;
 const appFavIconPath = "/assets/images/favicons/favicon.svg";
 
 /* ************************************************* 
- -- STANDARD STUFFS - DO NOT CHANGE UNLESS NEEDED --
+ -- STANDARD CONFIGS - CHANGES WHEN NEEDED ONLY --
 ****************************************************/
 
-// what is the minimum device width (in pixel) in order to use the app ?
+// what is the minimum device width (in pixels) in order to use the app ?
 const minDeviceWidth = "320px";
+
+// what are the active theme names to use ?
+// NOTE: The theme names provided here must be case (lower case / upper case) matched with those found in tailwind.config.js >> daisyUI > themes node. Ex: light | dark | cyberpunk | valentine, etc
+const activeThemeList = ["light", "dark", "cyberpunk", "valentine"];
+
+// when the app starts up, what should be the default theme name to load ?
+const defaultThemeNameToLoad = activeThemeList[0];
+
+/* ***************************************************** 
+ -- ADVANCED CONFIGS - YOU NEED MORE ADVANCED CONFIGS --
+********************************************************/
 
 // what are the standard breakpoints to use in the app ?
 // NOTE 1 - Standard Breakpoint Names provided here (such as sm | md, etc) must be exacted matched - including cases to those found in tailwind.config.js here >> https://tailwindcss.com/docs/screens
@@ -41,10 +52,6 @@ const standardBreakPoints = {
   xl: "1280px",
   "2xl": "1536px",
 };
-
-// what are the active theme list to use ?
-// NOTE: Theme names provided here must be exact matched - including cases to those found in tailwind.config.js daisyUI > themes. Ex: light | dark | cyberpunk | demo, etc
-const activeThemeList = ["light", "dark", "cyberpunk", "valentine"];
 
 /* ************************************************* 
  -- STOP - DO NOT MAKE ANY CHANGE DOWN BELOW 
@@ -61,6 +68,14 @@ const AppConfigs = {
   themes: {
     activeList: activeThemeList,
     standardBreakPoints: standardBreakPoints,
+  },
+  redux: {
+    ui: {
+      theme: {
+        name: defaultThemeNameToLoad,
+        defaultName: defaultThemeNameToLoad,
+      },
+    },
   },
 };
 

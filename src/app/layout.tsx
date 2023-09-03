@@ -2,7 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { inter } from "@/utils/fonts";
 
-import SiteProvider from "@/containers/SiteProvider";
+import RootProvider from "@/containers/RootProvider";
 
 import AppConfigs from "@/configs/AppConfigs";
 
@@ -23,9 +23,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en">
       <body className={inter.className}>
-        <SiteProvider>{children}</SiteProvider>
+        <RootProvider>{children}</RootProvider>
       </body>
     </html>
   );
