@@ -4,7 +4,11 @@ import AppConfigs from "@/configs/AppConfigs";
 
 import { WarningIcon, CheckDoneIcon } from "@/components/icons";
 
+import { useTranslations } from "next-intl";
+
 function Home() {
+  const githubT = useTranslations("github-codeset-info");
+
   return (
     <div
       className={
@@ -13,8 +17,7 @@ function Home() {
     >
       <ul className="menu rounded-box m-4 bg-white max-w-[540px]">
         <li className="p-2">
-          This NextJS v13 App Router {AppConfigs.site.appName} version has the
-          following configuration
+          {githubT("opening-text", { name: AppConfigs.site.appName })}
         </li>
         <li>
           <a>

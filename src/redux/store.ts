@@ -48,6 +48,7 @@ export const store = configureStore({
     return getDefaultMiddleware({ serializableCheck: false }).concat(logger);
   },
   devTools: process.env.NODE_ENV !== "production",
+  // devTools: false,
 });
 
 export const persistor = persistStore(store);

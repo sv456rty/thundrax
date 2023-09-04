@@ -38,6 +38,12 @@ const activeThemeList = ["light", "dark", "cyberpunk", "valentine"];
 // when the app starts up, what should be the default theme name to load ?
 const defaultThemeNameToLoad = activeThemeList[0];
 
+// Does the app support internationalization ? If yes, what are the i18n (internationalization) configs ?
+const i18n = {
+  defaultLocale: "en",
+  locales: ["en", "de", "cs"],
+};
+
 /* ***************************************************** 
  -- ADVANCED CONFIGS - YOU NEED MORE ADVANCED CONFIGS --
 ********************************************************/
@@ -65,6 +71,7 @@ const AppConfigs = {
     appFavIconPath: appFavIconPath,
     minDeviceWidth: minDeviceWidth,
   },
+  i18n: i18n,
   themes: {
     activeList: activeThemeList,
     standardBreakPoints: standardBreakPoints,
