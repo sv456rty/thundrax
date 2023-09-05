@@ -39,9 +39,14 @@ const activeThemeList = ["light", "dark", "cyberpunk", "valentine"];
 const defaultThemeNameToLoad = activeThemeList[0];
 
 // Does the app support internationalization ? If yes, what are the i18n (internationalization) configs ?
+// NOTE: If you add additional locales or change locale key (such as from en to en_US), go to /src/utils/i18n/i18n.getData.ts and update const localeData() accordingly
 const i18n = {
   defaultLocale: "en",
-  locales: ["en", "de", "cs"],
+  localeList: [
+    { key: "en", name: "English" },
+    { key: "zh_tw", name: "中文" },
+    { key: "vi", name: "Tiếng Việt" },
+  ],
 };
 
 /* ***************************************************** 
@@ -71,7 +76,12 @@ const AppConfigs = {
     appFavIconPath: appFavIconPath,
     minDeviceWidth: minDeviceWidth,
   },
-  i18n: i18n,
+  i18n: {
+    ...i18n,
+    locales: i18n.localeList.map((locale) => {
+      return locale.key;
+    }), // ['en', 'zh_cn', 'vi']
+  },
   themes: {
     activeList: activeThemeList,
     standardBreakPoints: standardBreakPoints,
@@ -82,6 +92,9 @@ const AppConfigs = {
       theme: {
         name: defaultThemeNameToLoad,
         defaultName: defaultThemeNameToLoad,
+      },
+      locale: {
+        name: i18n.defaultLocale,
       },
     },
   },

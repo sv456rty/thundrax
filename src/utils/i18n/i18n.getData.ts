@@ -21,10 +21,10 @@ import type { Locale } from "./i18n.getConfigs";
 const localeData: Record<Locale, any> = {
   en: () =>
     import("@/configs/locales/en.json").then((module) => module.default),
-  de: () =>
-    import("@/configs/locales/de.json").then((module) => module.default),
-  cs: () =>
-    import("@/configs/locales/cs.json").then((module) => module.default),
+  zh_tw: () =>
+    import("@/configs/locales/zh_tw.json").then((module) => module.default),
+  vi: () =>
+    import("@/configs/locales/vi.json").then((module) => module.default),
 };
 
 const getTranslator = async (locale: Locale) => {

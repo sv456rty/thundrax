@@ -6,6 +6,8 @@ import { WarningIcon, CheckDoneIcon } from "@/components/icons";
 
 import { type Locale, getTranslator } from "@/utils/i18n";
 
+import LocaleSwitcher from "@/components/LocaleSwitcher";
+
 async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const t = await getTranslator(lang);
 
@@ -16,6 +18,10 @@ async function Home({ params: { lang } }: { params: { lang: Locale } }) {
       }
     >
       <ul className="menu rounded-box m-4 bg-white max-w-[540px]">
+        <li>
+          <LocaleSwitcher orientation={"vertical"} />
+        </li>
+
         <li className="p-2">
           {t("github.opening_text", { name: AppConfigs.site.appName })}
         </li>
@@ -81,6 +87,14 @@ async function Home({ params: { lang } }: { params: { lang: Locale } }) {
         <li>
           <a>
             <CheckDoneIcon />
+            i18n Translation is implemented with built-in NextJS i18n feature
+            (no external i18n package is needed)
+            <br />
+          </a>
+        </li>
+        <li>
+          <a>
+            <CheckDoneIcon />
             ~100 Google PageSpeed Performance score when deploying to Vercel
             <br />
           </a>
@@ -88,11 +102,11 @@ async function Home({ params: { lang } }: { params: { lang: Locale } }) {
         <li>
           <a>
             <WarningIcon />
-            No specific page, route or translation configs are set up yet
+            No specific page or route configs are set up yet
           </a>
         </li>
         <li className="p-2">
-          This version is minimum base version + redux implementation
+          This version is minimum base version + redux + i18n implementation
         </li>
       </ul>
     </div>

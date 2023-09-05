@@ -1,5 +1,11 @@
 {
   "github": {
-    "opening_text": "Thisc NextJS v13 App Router {{  name}} version has the following configuration"
+    "opening_text": "This NextJS v13 App Router {{ name }} version has the following configuration",
+    "features": {
+      "f1": "All essential packages installed",
+      "f2": " All essential file structures are set up",
+      "f3": "Tailwind + nextjs + tscofig done",
+      "f4": " /public/assets/images/avatars loaded"
+    }
   }
 }

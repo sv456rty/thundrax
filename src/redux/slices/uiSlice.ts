@@ -14,8 +14,12 @@ const uiSlice = createSlice({
       const defaultName = AppConfigs.redux.ui.theme.name;
       state.theme.defaultName = savedName ? savedName : defaultName;
     },
+    setLocaleName: (state, action: PayloadAction<string>) => {
+      state.locale.name = action.payload;
+    },
   },
 });
 
-export const { setThemeName, setDefaultThemeName } = uiSlice.actions;
+export const { setThemeName, setDefaultThemeName, setLocaleName } =
+  uiSlice.actions;
 export default uiSlice.reducer;
