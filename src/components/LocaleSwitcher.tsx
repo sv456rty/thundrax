@@ -101,6 +101,24 @@ export default function LocaleSwitcher({
     return segments.join("/");
   };
 
+  return <div>Test Me Now</div>;
+}
+
+// ************************************
+function LocaleSwitcherx({
+  orientation = "vertical",
+}: {
+  orientation?: string;
+}) {
+  // path name
+  const pathName = usePathname();
+  const redirectedPathName = (locale: string) => {
+    if (!pathName) return "/";
+    const segments = pathName.split("/");
+    segments[1] = locale;
+    return segments.join("/");
+  };
+
   if (orientation.toLowerCase() === "horizontal") {
     return <HorizontalList redirectedPathName={redirectedPathName} />;
   } else {
