@@ -118,14 +118,17 @@ function VerticalList({ redirectedPathName }: List) {
           </svg>
 
           <div className="dropdown">
-            <ul
-              tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-36"
-            >
+            <ul className="menu menu-horizontal flex items-center justify-center bg-base-200 rounded-box">
               {i18n.localeList.map((locale) => {
                 return (
                   <li key={locale.key}>
-                    <a>{locale.name}</a>
+                    <Link
+                      legacyBehavior
+                      href={redirectedPathName(locale.key)}
+                      prefetch={false}
+                    >
+                      <a>{locale.name}</a>
+                    </Link>
                   </li>
                 );
               })}
