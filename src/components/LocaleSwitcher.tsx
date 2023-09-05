@@ -101,7 +101,7 @@ export default function LocaleSwitcher({
     return segments.join("/");
   };
 
-  return <div>Test Me Now</div>;
+  return <HorizontalList redirectedPathName={redirectedPathName} />;
 }
 
 // ************************************
