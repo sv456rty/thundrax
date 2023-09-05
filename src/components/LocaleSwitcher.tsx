@@ -44,7 +44,7 @@ function VerticalListx({ redirectedPathName }: List) {
 
   return (
     <div className="flex justify-end">
-      <div className="dropdown dropdown-bottom">
+      <div className="dropdown dropdown-end">
         <div tabIndex={0} className="btn btn-ghost normal-case">
           <svg
             className="h-5 w-5 fill-current"
@@ -95,21 +95,29 @@ function VerticalList({ redirectedPathName }: List) {
 
   return (
     <div className="flex justify-end">
-      <ul className="dropdown dropdown-bottom flex items-center justify-center bg-base-200 rounded-box">
-        {i18n.localeList.map((locale) => {
-          return (
-            <li key={locale.key}>
-              <Link
-                legacyBehavior
-                href={redirectedPathName(locale.key)}
-                prefetch={false}
-              >
-                <a>{locale.name}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn m-1">
+          Click
+        </label>
+        <ul
+          tabIndex={0}
+          className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          {i18n.localeList.map((locale) => {
+            return (
+              <li key={locale.key}>
+                <Link
+                  legacyBehavior
+                  href={redirectedPathName(locale.key)}
+                  prefetch={false}
+                >
+                  <a>{locale.name}</a>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
