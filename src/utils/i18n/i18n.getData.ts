@@ -29,6 +29,7 @@ const localeData: Record<Locale, any> = {
 
 const getTranslator = async (locale: Locale) => {
   const dictionary = await localeData[locale]();
+
   return (key: string, params?: { [key: string]: string | number }) => {
     let translation = key
       .split(".")
