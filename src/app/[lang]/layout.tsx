@@ -6,10 +6,7 @@ import RootProvider from "@/containers/RootProvider";
 
 import AppConfigs from "@/configs/AppConfigs";
 
-import { i18n } from "@/utils/i18n-config";
-
-import { useLocale } from "next-intl";
-import { notFound } from "next/navigation";
+import { i18n } from "@/utils/i18n";
 
 const faviconPath = AppConfigs.site.appFavIconPath;
 
@@ -22,15 +19,20 @@ export const metadata: Metadata = {
   },
 };
 
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: { lang: string };
 }) {
-  const locale = useLocale();
-
+  if (!params?.lang) return null;
   return (
-    <html lang={locale}>
+    <html lang={params.lang}>
       <body className={inter.className}>
         <RootProvider>{children}</RootProvider>
       </body>

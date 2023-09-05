@@ -4,10 +4,10 @@ import AppConfigs from "@/configs/AppConfigs";
 
 import { WarningIcon, CheckDoneIcon } from "@/components/icons";
 
-import { useTranslations } from "next-intl";
+import { type Locale, getTranslator } from "@/utils/i18n";
 
-function Home() {
-  const githubT = useTranslations("github-codeset-info");
+async function Home({ params: { lang } }: { params: { lang: Locale } }) {
+  const t = await getTranslator(lang);
 
   return (
     <div
@@ -17,7 +17,7 @@ function Home() {
     >
       <ul className="menu rounded-box m-4 bg-white max-w-[540px]">
         <li className="p-2">
-          {githubT("opening-text", { name: AppConfigs.site.appName })}
+          {t("github.opening_text", { name: AppConfigs.site.appName })}
         </li>
         <li>
           <a>
