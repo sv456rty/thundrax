@@ -95,7 +95,7 @@ function VerticalList({ redirectedPathName }: List) {
 
   return (
     <div className="flex justify-end">
-      <ul className="menu menu-horizontal flex items-center justify-center bg-base-200 rounded-box">
+      <ul className="dropdown dropdown-bottom flex items-center justify-center bg-base-200 rounded-box">
         {i18n.localeList.map((locale) => {
           return (
             <li key={locale.key}>
