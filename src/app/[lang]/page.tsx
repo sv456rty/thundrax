@@ -13,6 +13,12 @@ import LocaleSwitcher from "@/components/LocaleSwitcher";
 </li>
 */
 
+import dynamic from "next/dynamic";
+
+const LocaleSwitcher = dynamic(() => import("@/components/LocaleSwitcher"), {
+  loading: () => <p>Loading...</p>,
+});
+
 async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const t = await getTranslator(lang);
 
@@ -23,6 +29,9 @@ async function Home({ params: { lang } }: { params: { lang: Locale } }) {
       }
     >
       <ul className="menu rounded-box m-4 bg-white max-w-[540px]">
+        <li>
+          <LocaleSwitcher orientation={"vertical"} />
+        </li>
         <li className="p-2">
           {t("github.opening_text", { name: AppConfigs.site.appName })}
         </li>
