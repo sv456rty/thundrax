@@ -6,18 +6,7 @@ import { WarningIcon, CheckDoneIcon } from "@/components/icons";
 
 import { type Locale, getTranslator } from "@/utils/i18n";
 
-/*
 import LocaleSwitcher from "@/components/LocaleSwitcher";
-<li>
-<LocaleSwitcher orientation={"vertical"} />
-</li>
-*/
-
-import dynamic from "next/dynamic";
-
-const LocaleSwitcher = dynamic(() => import("@/components/LocaleSwitcher"), {
-  loading: () => <p>Loading...</p>,
-});
 
 async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const t = await getTranslator(lang);

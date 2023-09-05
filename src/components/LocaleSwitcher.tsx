@@ -88,11 +88,6 @@ function VerticalListx({ redirectedPathName }: List) {
 
 // ************************************
 function VerticalList({ redirectedPathName }: List) {
-  const { push } = useRouter();
-  const redirect = (localeKey: string) => {
-    push(redirectedPathName(localeKey));
-  };
-
   return (
     <div className="flex justify-end">
       <div className="dropdown dropdown-end">
@@ -155,29 +150,9 @@ export default function LocaleSwitcher({
     return segments.join("/");
   };
 
-  // return <HorizontalList redirectedPathName={redirectedPathName} />;
-
-  return <VerticalList redirectedPathName={redirectedPathName} />;
-}
-
-// ************************************
-function LocaleSwitcherx({
-  orientation = "vertical",
-}: {
-  orientation?: string;
-}) {
-  // path name
-  const pathName = usePathname();
-  const redirectedPathName = (locale: string) => {
-    if (!pathName) return "/";
-    const segments = pathName.split("/");
-    segments[1] = locale;
-    return segments.join("/");
-  };
-
-  if (orientation.toLowerCase() === "horizontal") {
-    return <HorizontalList redirectedPathName={redirectedPathName} />;
-  } else {
+  if (orientation.toLowerCase() === "vertical") {
     return <VerticalList redirectedPathName={redirectedPathName} />;
+  } else {
+    return <HorizontalList redirectedPathName={redirectedPathName} />;
   }
 }
