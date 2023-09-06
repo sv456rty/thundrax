@@ -1,7 +1,14 @@
 import AppConfigs from "@/configs/AppConfigs";
 
-import LocaleSwitcher from "@/components/LocaleSwitcher";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
+import dynamic from "next/dynamic";
+
+const LocaleSwitcher = dynamic(() => import("@/components/LocaleSwitcher"), {
+  loading: () => <p>Loading...</p>,
+});
+
+const ThemeSwitcher = dynamic(() => import("@/components/ThemeSwitcher"), {
+  loading: () => <p>Loading...</p>,
+});
 
 const NavBar = () => {
   return (
