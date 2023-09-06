@@ -12,7 +12,7 @@ const ThemeSwitcher = dynamic(() => import("@/components/ThemeSwitcher"), {
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-base-300 rounded-box">
+    <div className="navbar bg-base-300 rounded-t-2xl rounded-b-none">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">
           {AppConfigs.site.appName}
