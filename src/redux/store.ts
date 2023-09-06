@@ -24,7 +24,7 @@ const rootReducer = combineReducers({
 const rootConfig = getPersistConfig({
   key: "root",
   storage,
-  whitelist: ["ui.theme"],
+  whitelist: ["ui"],
   rootReducer,
 });
 
