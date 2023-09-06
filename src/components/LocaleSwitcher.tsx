@@ -2,9 +2,14 @@
 
 "use client";
 
+import classNames from "classnames";
+
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { i18n } from "@/utils/i18n/i18n.getConfigs";
+
+import { setLocaleName } from "@/redux/slices/uiSlice";
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
 
 import { LocaleSwitcherIcon, DropDownIcon } from "@/components/icons";
 
@@ -42,6 +47,12 @@ function HorizontalList({ redirectedPathName, localeList }: List) {
 
 // ************************************
 function VerticalList({ redirectedPathName, localeList }: List) {
+  const localeName = useAppSelector((state) => state.ui.locale.name);
+  const dispatch = useAppDispatch();
+  const handleClick = (chosenLocaleKey: string) => {
+    dispatch(setLocaleName(chosenLocaleKey));
+  };
+
   return (
     <div className="flex">
       <div className="dropdown dropdown-end">
@@ -59,13 +70,30 @@ function VerticalList({ redirectedPathName, localeList }: List) {
                 key={locale.key}
                 className="bg-base-100 mb-2 rounded-box hover:bg-base-200"
               >
-                <Link
-                  legacyBehavior
-                  href={redirectedPathName(locale.key)}
-                  prefetch={false}
-                >
-                  <a>{locale.name}</a>
-                </Link>
+                <div className="col-span-5 row-span-3 row-start-1 flex items-center gap-2 px-4 py-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className={classNames({
+                      invisible: localeName !== locale.key,
+                      "h-3 w-3 shrink-0": true,
+                    })}
+                  >
+                    <path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"></path>
+                  </svg>
+                  <Link
+                    legacyBehavior
+                    href={redirectedPathName(locale.key)}
+                    prefetch={false}
+                  >
+                    <a onClick={(e) => handleClick(locale.key)}>
+                      {locale.name}
+                    </a>
+                  </Link>
+                </div>
               </li>
             );
           })}
