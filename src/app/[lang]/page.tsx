@@ -1,10 +1,14 @@
 // page.tsx
 
+import dynamic from "next/dynamic";
+
 import AppConfigs from "@/configs/AppConfigs";
 import { WarningIcon, CheckDoneIcon } from "@/components/icons";
 import { type Locale, getTranslator } from "@/utils/i18n";
 
-import NavBar from "@/components/NavBar";
+const NavBar = dynamic(() => import("@/components/NavBar"), {
+  loading: () => <p>Loading...</p>,
+});
 
 async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const t = await getTranslator(lang);
